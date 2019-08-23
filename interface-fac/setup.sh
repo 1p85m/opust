@@ -19,6 +19,7 @@ apt install -y openssh-server
 apt install -y wget
 apt install -y curl
 apt install -y openssl
+apt install -y python3-pip
 
 ## for development
 apt install -y make
@@ -41,7 +42,7 @@ cp etc-ntp.conf.osaka /etc/ntp.conf
 systemctl restart ntp
 
 ## .bashrc configurations
-cp $HOME/.bashrc $HOME/.bashrc.original
+cp $HOME/.bashrc $HOME/.bashrc.`date '%Y%m%d_%H%M%S'`
 cat home-user-.bashrc >> $HOME/.bashrc
 
 
@@ -56,6 +57,7 @@ pip3 install pandas
 pip3 install twisted
 pip3 install pyyaml
 pip3 install pyparsing
+pip3 install psutil
 
 ## astro
 pip3 install aplpy
