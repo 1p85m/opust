@@ -19,6 +19,7 @@ apt install -y openssh-server
 apt install -y wget
 apt install -y curl
 apt install -y openssl
+apt install -y python3
 apt install -y python3-pip
 
 ## for development
