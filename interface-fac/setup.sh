@@ -38,6 +38,7 @@ apt install -y libpng-dev
 # general setup
 ## ntp configurations
 timedatectl set-timezone UTC
+cp /etc/ntp.conf　/etc/ntp.conf.original
 cp etc-ntp.conf.osaka /etc/ntp.conf
 systemctl restart ntp
 
