@@ -50,7 +50,7 @@ cat home-user-.bashrc >> $HOME/.bashrc
 
 # python setup
 ## general
-pip3 install --upgrade python-pip
+python3 -m pip install --upgrade pip
 pip3 install ipython
 pip3 install numpy
 pip3 install scipy
