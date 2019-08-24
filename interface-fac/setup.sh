@@ -34,6 +34,7 @@ apt install -y libsqlite3-dev
 apt install -y libncurses5-dev
 apt install -y libncursesw5-dev
 apt install -y libpng-dev
+apt install -y catkin
 
 
 # general setup
@@ -50,7 +51,6 @@ cat home-user-.bashrc >> $HOME/.bashrc
 
 # python setup
 ## general
-python3 -m pip install --upgrade pip
 pip3 install ipython
 pip3 install numpy
 pip3 install scipy
@@ -74,12 +74,6 @@ pip3 install ogameasure
 pip3 install necstdb
 pip3 install xfftspy
 
-## ros
-pip3 install rospkg
-pip3 install catkin_pkg
-pip3 install empy
-
-
 # ROS setup
 ## install ROS
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -88,8 +82,14 @@ apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BAD
 apt update
 apt install ros-melodic-ros-base
 rosdep init
-
 rosdep update
+
+# python setup
+## ros
+pip3 install rospkg
+pip3 install catkin_pkg
+pip3 install empy
+
 mkdir -p $HOME/ros/src
 cd $HOME/ros/src
 catkin_init_workspace
