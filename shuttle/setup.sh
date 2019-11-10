@@ -18,8 +18,8 @@ apt install -y python3
 apt install -y python3-pip
 
 ## for development
-#apt install -y make
-#apt install -y build-essential
+apt install -y make
+apt install -y build-essential
 apt install -y libssl-dev
 apt install -y zlib1g-dev
 apt install -y libbz2-dev
@@ -54,7 +54,7 @@ pip3 install psutil
 
 ## astro
 pip3 install aplpy
-#pip3 install reproject
+pip3 install reproject
 pip3 install astroquery
 pip3 install wcsaxes
 pip3 install healpy
@@ -66,14 +66,6 @@ pip3 install necstdb
 pip3 install xfftspy
 
 # ROS setup
-
-## ros
-pip3 install rospkg
-#pip3 install catkin_pkg
-pip3 install empy
-
-#cp -r /usr/local/lib/python3.6/dist-packages/* /usr/lib/python2.7/dist-packages/
-
 ## install ROS
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
@@ -81,7 +73,13 @@ apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BAD
 apt update
 apt install -y ros-melodic-ros-base
 
-#rosdep init
+## ros python
+pip3 install rospkg
+pip3 install catkin_pkg
+pip3 install empy
+
+cp -r /usr/local/lib/python3.6/dist-packages/catkin_pkg /usr/lib/python2.7/dist-packages/
+
 rosdep update
 
 mkdir -p $HOME/ros/src
