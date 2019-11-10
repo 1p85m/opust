@@ -18,8 +18,8 @@ apt install -y python3
 apt install -y python3-pip
 
 ## for development
-#apt install -y make
-#apt install -y build-essential
+apt install -y make
+apt install -y build-essential
 apt install -y libssl-dev
 apt install -y zlib1g-dev
 apt install -y libbz2-dev
@@ -54,7 +54,7 @@ pip3 install psutil
 
 ## astro
 pip3 install aplpy
-#pip3 install reproject
+pip3 install reproject
 pip3 install astroquery
 pip3 install wcsaxes
 pip3 install healpy
@@ -65,14 +65,6 @@ pip3 install ogameasure
 pip3 install necstdb
 pip3 install xfftspy
 
-# ROS setup
-
-## ros
-pip3 install rospkg
-#pip3 install catkin_pkg
-pip3 install empy
-
-#cp -r /usr/local/lib/python3.6/dist-packages/* /usr/lib/python2.7/dist-packages/
 
 ## install ROS
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -80,22 +72,3 @@ apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BAD
 
 apt update
 apt install -y ros-melodic-ros-base
-
-#rosdep init
-rosdep update
-
-mkdir -p $HOME/ros/src
-cd $HOME/ros/src
-catkin_init_workspace
-
-## install necst packages
-### necst-core
-git clone https://github.com/ogawa-ros/necst-core.git $HOME/ros/src/necst-core
-git clone https://github.com/ogawa-ros/necst-sisrx.git $HOME/ros/src/necst-sisrx
-git clone https://github.com/ogawa-ros/necst-sisrx_dsb.git $HOME/ros/src/necst-sisrx_dsb
-git clone https://github.com/ogawa-ros/rospkg-ogameasure.git $HOME/ros/src/rospkg-ogameasure
-git clone https://github.com/ogawa-ros/necst-telescope.git
-git clone https://github.com/ogawa-ros/rospkg-pyinterface.git $HOME/ros/src/rospkg-pyinterface
-
-cd $HOME/ros
-catkin_make
