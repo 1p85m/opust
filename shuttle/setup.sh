@@ -73,14 +73,14 @@ apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BAD
 apt update
 apt install -y ros-melodic-ros-base
 
+rosdep update
+
 ## ros python
 pip3 install rospkg
 pip3 install catkin_pkg
 pip3 install empy
 
 cp -r /usr/local/lib/python3.6/dist-packages/catkin_pkg /usr/lib/python2.7/dist-packages/
-
-rosdep update
 
 mkdir -p $HOME/ros/src
 cd $HOME/ros/src
