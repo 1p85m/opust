@@ -1,6 +1,6 @@
 #! /bin/sh
 
-# Required environment : Ubuntu 18.04 LTS
+# Required environment : Ubuntu 18.04 LTS CUI
 # Comments:
 #   - execute this file by root user
 
@@ -42,6 +42,11 @@ systemctl restart ntp
 cp $HOME/.bashrc $HOME/.bashrc.`date '%Y%m%d_%H%M%S'`
 cat home-user-.bashrc >> $HOME/.bashrc
 
+cp /home/ogawalab/.bashrc /home/ogawalab/.bashrc.`date '%Y%m%d_%H%M%S'`
+cat home-user-.bashrc >> /home/ogawalab/.bashrc
+
+cp /home/telescopio/.bashrc /home/telescopio/.bashrc.`date '%Y%m%d_%H%M%S'`
+cat home-user-.bashrc >> /home/telescopio/.bashrc
 
 # python setup
 ## general
@@ -78,10 +83,12 @@ pip3 install rospkg
 pip3 install catkin_pkg
 pip3 install empy
 
+## ros wrok at python2.7
 cp -r /usr/local/lib/python3.6/dist-packages/catkin_pkg /usr/lib/python2.7/dist-packages/
 
 rosdep update
 
+## ros bashrc
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
