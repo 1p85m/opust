@@ -32,6 +32,8 @@ apt install -y libncursesw5-dev
 apt install -y libpng-dev
 apt install -y catkin
 apt install -y git
+apt install -y vnc4server
+apt install -y lxde
 
 # general setup
 ## ntp configurations
